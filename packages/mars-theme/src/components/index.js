@@ -54,11 +54,15 @@ const Theme = ({ state }) => {
 export default connect(Theme);
 
 const globalStyles = css`
+  :root {
+  }
+
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
+  
   a,
   a:visited {
     color: inherit;

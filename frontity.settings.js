@@ -18,25 +18,37 @@ const settings = {
               "/"
             ],
             [
-              "Nature",
-              "/category/nature/"
+              "Casual",
+              "/category/Casual/"
             ],
             [
-              "Travel",
-              "/category/travel/"
+              "Coffee",
+              "/category/Coffee/"
             ],
             [
-              "Japan",
-              "/tag/japan/"
+              "Dining",
+              "/category/Dining/"
             ],
             [
-              "About Us",
-              "/about-us/"
+              "Fast Food",
+              "/category/Fast-Food/"
+            ],
+            [
+              "Food-Truck",
+              "/category/Food-Truck"
+            ], 
+            [
+              "Formal", 
+              "/category/formal"
+            ], 
+            [
+              "Vending", 
+              "/category/vending"
             ]
           ],
           "featured": {
-            "showOnList": false,
-            "showOnPost": false
+            "showOnList": true,
+            "showOnPost": true
           }
         }
       }
@@ -45,7 +57,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://winfieldeats.wordpress.com"
         }
       }
     },

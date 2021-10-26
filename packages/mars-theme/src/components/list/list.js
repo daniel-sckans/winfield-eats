@@ -37,10 +37,14 @@ const List = ({ state }) => {
 export default connect(List);
 
 const Container = styled.section`
-  width: 800px;
   margin: 0;
   padding: 24px;
   list-style: none;
+
+  display: grid; 
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-gap: 2rem; 
+  grid-auto-flow: dense;
 `;
 
 const Header = styled.h3`

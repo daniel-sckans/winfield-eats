@@ -3,14 +3,21 @@ import Link from "./link";
 import Nav from "./nav";
 import MobileMenu from "./menu";
 
-const Header = ({ state }) => {
+const Header = ({ state, actions }) => {
+  const onChange = event => {
+    if(event.target.value !== '') {
+      actions.router.setUrl('?s=' + event.target.value)
+    }
+  }; 
+  
   return (
     <>
       <Container>
         <StyledLink link="/">
-          <Title>{state.frontity.title}</Title>
+          <Title>Winfield Eats</Title>
         </StyledLink>
-        <Description>{state.frontity.description}</Description>
+        <Search onChange={onChange} />
+        <Description>Eating Wins in Winfield</Description>
         <MobileMenu />
       </Container>
       <Nav />
@@ -20,6 +27,10 @@ const Header = ({ state }) => {
 
 // Connect the Header component to get access to the `state` in it's `props`
 export default connect(Header);
+
+const Search = styled.input`
+  width: 33%; 
+`; 
 
 const Container = styled.div`
   width: 848px;
@@ -35,6 +46,7 @@ const Container = styled.div`
 const Title = styled.h2`
   margin: 0;
   margin-bottom: 16px;
+  color: #0f0; 
 `;
 
 const Description = styled.h4`

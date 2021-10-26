@@ -15,7 +15,7 @@ const Item = ({ state, item }) => {
   const date = new Date(item.date);
 
   return (
-    <article>
+    <Article>
       <Link link={item.link}>
         <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
       </Link>
@@ -47,15 +47,21 @@ const Item = ({ state, item }) => {
       {item.excerpt && (
         <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
       )}
-    </article>
+    </Article>
   );
 };
 
 // Connect the Item to gain access to `state` as a prop
 export default connect(Item);
 
+const Article = styled.article`
+  &:nth-of-type(7) {
+    grid-column: 2; 
+  }
+`; 
+
 const Title = styled.h1`
-  font-size: 2rem;
+  font-size: 3rem;
   color: rgba(12, 17, 43);
   margin: 0;
   padding-top: 24px;
@@ -65,7 +71,7 @@ const Title = styled.h1`
 
 const AuthorName = styled.span`
   color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
+  font-size: 2rem;
 `;
 
 const StyledLink = styled(Link)`
@@ -74,10 +80,11 @@ const StyledLink = styled(Link)`
 
 const PublishDate = styled.span`
   color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
+  font-size: 2rem;
 `;
 
 const Excerpt = styled.div`
   line-height: 1.6em;
   color: rgba(12, 17, 43, 0.8);
+  font-size: 1rem; 
 `;
